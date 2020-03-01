@@ -1,0 +1,16 @@
+build:
+  script: ./build.sh
+  stage: build
+  artifacts:
+    untracked: true
+  tags: 
+     - java
+
+
+tests:
+   script: ./test.sh
+   stage: test
+   dependencies: 
+    - build
+   tags: 
+     - java
